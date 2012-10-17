@@ -1,0 +1,1 @@
+Somewhere Halal is the World's Largest Directory of Halal Restaurants. This is Android application for Halal

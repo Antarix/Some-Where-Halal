@@ -97,6 +97,8 @@
             <Button
                 android:id="@+id/btn_go"
                 android:layout_width="50dp"
+                android:padding="8dp"
+                android:background="@drawable/button_selector"
                 android:layout_height="wrap_content"
                 android:layout_margin="10dp"
                 android:text="@string/go" />
