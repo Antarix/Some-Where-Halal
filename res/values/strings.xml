@@ -1,0 +1,106 @@
+<resources>
+
+    <string name="app_name">Some Where Halal</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_main">Main</string>
+    <string name="enter_your_keyword">Enter your keywords</string>
+    <string name="enter_zip">Enter Zip/Postal Code</string>
+    <string name="enter">Enter</string>
+    <string name="go">Go</string>
+    <string name="select_country">Select Country</string>
+    <string name="select_state">Select State</string>
+    <string name="rating">Rating&#8230;</string>
+    <string name="select_your_preference">Select Your Preferences (UK only):</string>
+
+    <string-array name="rating_array">
+        <item>5</item>
+        <item>4</item>
+        <item>3</item>
+        <item>2</item>
+        <item>1</item>
+        <item>Any</item>
+    </string-array>
+    <string-array name="country_array">
+        <item>England</item>
+        <item>Northern Ireland</item>
+        <item>Scotland</item>
+        <item>Wales</item>
+    </string-array>
+    <string-array name="northern_ireland_state_array">
+        <item>Armagh</item>
+        <item>Belfast</item>
+        <item>Londonderry</item>
+        <item>Lisburn</item>
+        <item>Newry</item>
+    </string-array>
+    <string-array name="scotland_state_array">
+        <item>Aberdeen</item>
+        <item>Dundee</item>
+        <item>Edinburgh</item>
+        <item>Glasgow</item>
+        <item>Inverness</item>
+        <item>Stirling</item>
+    </string-array>
+    <string-array name="wales_state_array">
+        <item>Bangor</item>
+        <item>Cardiff</item>
+        <item>Newport</item>
+        <item>St Davids</item>
+        <item>Swansea</item>
+    </string-array>
+    <string-array name="england_state_array">
+        <item>Bath</item>
+        <item>Birmingham</item>
+        <item>Scotland</item>
+        <item>Bradford</item>
+        <item>Brighton and Hove"</item>
+        <item>Bristol</item>
+        <item>Cambridge</item>
+        <item>Canterbury</item>
+        <item>Carlisle</item>
+        <item>Chester</item>
+        <item>Chichester</item>
+        <item>Coventry</item>
+        <item>Derby</item>
+        <item>Durham</item>
+        <item>Ely</item>
+        <item>Exeter</item>
+        <item>Gloucester</item>
+        <item>Hereford</item>
+        <item>Kingston upon Hull</item>
+        <item>Lancaster</item>
+        <item>Leeds</item>
+        <item>Leicester</item>
+        <item>Lichfield</item>
+        <item>Lincoln</item>
+        <item>Liverpool</item>
+        <item>City of London</item>
+        <item>Manchester</item>
+        <item>Newcastle upon Tyne</item>
+        <item>Norwich</item>
+        <item>Nottingham</item>
+        <item>Oxford</item>
+        <item>Peterborough</item>
+        <item>Plymouth</item>
+        <item>Portsmouth</item>
+        <item>Preston</item>
+        <item>Ripon</item>
+        <item>Salford</item>
+        <item>Salisbury</item>
+        <item>Sheffield</item>
+        <item>Southampton</item>
+        <item>St Albans</item>
+        <item>Stoke-on-Trent</item>
+        <item>Sunderland</item>
+        <item>Truro</item>
+        <item>Wakefield</item>
+        <item>Wells</item>
+        <item>Westminster</item>
+        <item>Winchester</item>
+        <item>Wolverhampton</item>
+        <item>Worcester</item>
+        <item>York</item>
+    </string-array>
+
+</resources>
