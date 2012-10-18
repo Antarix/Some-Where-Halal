@@ -36,7 +36,7 @@ public class RestaurantDetail extends Activity {
 		util = new Util();
 		if (RestaurantIntent.hasExtra("Query")) {
 			Query = RestaurantIntent.getStringExtra("Query");
-			String Url = "http://192.168.0.100:81/somewherehalal.com/lib/restaurant-detail.php?id=" + util.getEncodedString(Query);
+			String Url = "http://somewherehalal.com/lib/restaurant-detail.php?id=" + util.getEncodedString(Query);
 						
 			//Toast.makeText(getApplicationContext(),"URL : " +  Url, Toast.LENGTH_LONG).show();
 			loadRestaurant(Url);

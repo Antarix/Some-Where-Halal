@@ -43,7 +43,7 @@ public class RestaurantList extends Activity {
 		if (RestaurantIntent.hasExtra("SearchQuery")) {
 			SearchQuery = RestaurantIntent.getStringArrayExtra("SearchQuery");
 			
-			String Url = "http://192.168.0.100:81/somewherehalal.com/lib/search.php?country="
+			String Url = "http://somewherehalal.com/lib/search.php?country="
 					+ util.getEncodedString(SearchQuery[0]) + "&state=" + util.getEncodedString(SearchQuery[1]);
 			loadRestaurantList(Url);
 
