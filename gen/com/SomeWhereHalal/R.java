@@ -31,15 +31,30 @@ public final class R {
     public static final class id {
         public static final int btn_enter=0x7f080000;
         public static final int btn_go=0x7f080006;
-        public static final int menu_settings=0x7f080007;
+        public static final int listview_restaurant=0x7f080011;
+        public static final int menu_settings=0x7f080012;
         public static final int spinner_country=0x7f080002;
         public static final int spinner_rating=0x7f080004;
         public static final int spinner_state=0x7f080003;
+        public static final int txt_address=0x7f08000a;
+        public static final int txt_country=0x7f08000b;
+        public static final int txt_cuisine=0x7f080008;
+        public static final int txt_description=0x7f080009;
+        public static final int txt_email=0x7f08000f;
+        public static final int txt_name=0x7f080007;
+        public static final int txt_phone=0x7f08000e;
         public static final int txt_search=0x7f080001;
+        public static final int txt_state=0x7f08000c;
+        public static final int txt_web=0x7f080010;
+        public static final int txt_zip=0x7f08000d;
         public static final int zip_code_text=0x7f080005;
     }
     public static final class layout {
         public static final int main=0x7f030000;
+        public static final int restaurant_details=0x7f030001;
+        public static final int restaurant_list=0x7f030002;
+        public static final int restaurant_list_item=0x7f030003;
+        public static final int splashscreen=0x7f030004;
     }
     public static final class menu {
         public static final int main=0x7f070000;
@@ -57,9 +72,11 @@ public final class R {
         public static final int select_state=0x7f040009;
         public static final int select_your_preference=0x7f04000b;
         public static final int title_activity_main=0x7f040003;
+        public static final int title_activity_restaurant_list=0x7f04000c;
     }
     public static final class style {
         public static final int AppTheme=0x7f060000;
         public static final int SearchTextBox=0x7f060001;
+        public static final int SplashTheme=0x7f060002;
     }
 }

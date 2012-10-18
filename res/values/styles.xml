@@ -13,5 +13,10 @@
         <item name="android:paddingTop">2dp</item>
         <item name="android:paddingBottom">2dp</item>
     </style>
+    
+     <style name="SplashTheme">
+	    <item name="android:windowNoTitle">true</item>
+	    <item name="android:background">#990000</item>
+	</style>
 
 </resources>

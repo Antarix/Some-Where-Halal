@@ -1,0 +1,125 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@drawable/logo" >
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="80dp"
+        android:background="#ffffff"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/txt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="15dp"
+            android:text="Name : Halal"
+            android:background="#dddddd"
+            android:textColor="#272727"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/txt_cuisine"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="15dp"
+            android:text="Cuisine type : Pakistan"
+            android:textColor="#272727"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/txt_description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="15dp"
+            android:background="#dddddd"
+            android:text="Description : Is a very good restaurant"
+            android:textColor="#272727"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/txt_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="15dp"
+            android:text="Address : Somewhere in UK"
+            android:textColor="#272727"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/txt_country"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="15dp"
+            android:background="#dddddd"
+            android:text="Country : England"
+            android:textColor="#272727"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/txt_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="15dp"
+            android:text="State : Bath"
+            android:textColor="#272727"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/txt_zip"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="15dp"
+            android:background="#dddddd"
+            android:text="Zip : 421302"
+            android:textColor="#272727"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/txt_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="15dp"
+            android:text="Mobile : +91888997788"
+            android:textColor="#272727"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/txt_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="15dp"
+            android:background="#dddddd"
+            android:text="Email : halal@rest.com"
+            android:textColor="#272727"
+            android:textSize="13dp" />
+
+        <TextView
+            android:id="@+id/txt_web"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="15dp"
+            android:text="Web-adress : http://www.halal.com"
+            android:textColor="#272727"
+            android:textSize="13dp" />
+    </LinearLayout>
+
+</RelativeLayout>
