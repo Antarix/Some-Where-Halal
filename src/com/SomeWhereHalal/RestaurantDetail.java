@@ -1,25 +1,14 @@
 package com.SomeWhereHalal;
 
-import java.io.BufferedReader;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
-
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.impl.client.DefaultHttpClient;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
-
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
 
@@ -44,6 +33,18 @@ public class RestaurantDetail extends Activity {
 		}
 	}
 	
+	public void gmapPressed(View v)
+	{
+		//Toast.makeText(getApplicationContext(), "clicked", Toast.LENGTH_LONG).show();
+		String cord[]= new String[]{"20.371237", "72.906340"};
+		
+		Intent myIntent = new Intent(getApplicationContext(), Gmap.class);
+		
+		myIntent.putExtra("cord",cord);
+		
+		startActivity(myIntent); 
+	}
+	@SuppressWarnings("static-access")
 	public void loadRestaurant(String Url) {
 
 		TextView txtName = (TextView)findViewById(R.id.txt_name);
@@ -77,9 +78,6 @@ public class RestaurantDetail extends Activity {
 		} catch (JSONException e) {
 			Log.e("RESTAURANT DETAIL", "Error parsing data " + e.toString());
 		}
-		
-		
-		
 		
 		
 	}
