@@ -15,17 +15,16 @@ import android.widget.TextView;
 public class RestaurantDetail extends Activity {
 
 	private String Query;
-	private Util util;
-
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.restaurant_details);
 		Intent RestaurantIntent = getIntent();
-		util = new Util();
+	
 		if (RestaurantIntent.hasExtra("Query")) {
 			Query = RestaurantIntent.getStringExtra("Query");
-			String Url = "http://somewherehalal.com/lib/restaurant-detail.php?id=" + util.getEncodedString(Query);
+			String Url = "http://somewherehalal.com/lib/restaurant-detail.php?id=" + Util.getEncodedString(Query);
 						
 			//Toast.makeText(getApplicationContext(),"URL : " +  Url, Toast.LENGTH_LONG).show();
 			loadRestaurant(Url);
@@ -44,7 +43,7 @@ public class RestaurantDetail extends Activity {
 		
 		startActivity(myIntent); 
 	}
-	@SuppressWarnings("static-access")
+	
 	public void loadRestaurant(String Url) {
 
 		TextView txtName = (TextView)findViewById(R.id.txt_name);
@@ -61,7 +60,7 @@ public class RestaurantDetail extends Activity {
 		
 		
 		try {
-			JSONObject object = util.getJSONfromURL(Url);
+			JSONObject object = Util.getJSONfromURL(Url);
 			JSONObject json = (JSONObject) new JSONTokener(object.toString()).nextValue();
 		    txtName.setText("Name :  " + json.getString("name"));
 			txtCuisine.setText("Cuisine :  " + json.getString("cussine"));

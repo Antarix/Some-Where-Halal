@@ -77,14 +77,6 @@
                 android:layout_marginTop="15dp"
                 android:prompt="@string/select_state" />
 
-            <Spinner
-                android:id="@+id/spinner_rating"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="15dp"
-                android:prompt="@string/rating" />
-
             <EditText
                 android:id="@+id/zip_code_text"
                 style="@style/SearchTextBox"
@@ -105,6 +97,18 @@
                 android:textColor="#ffffff"
                 android:onClick="showSearchResults"
                 android:text="@string/go" />
+            
+            <Button
+                android:id="@+id/btnNerarBy"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:background="@drawable/button_selector"
+                android:onClick="getNearby"
+                android:padding="15dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/get_near_by_hahal"
+                android:textColor="#ffffff" />
         </LinearLayout>
     </ScrollView>
 

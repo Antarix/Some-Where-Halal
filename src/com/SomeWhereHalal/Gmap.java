@@ -2,26 +2,22 @@ package com.SomeWhereHalal;
 
 import java.util.List;
 
-import com.google.android.maps.GeoPoint;
-import com.google.android.maps.MapController;
-
-import com.google.android.maps.MapActivity;
-
-import com.google.android.maps.MapView;
-import com.google.android.maps.Overlay;
-
-import android.os.Bundle;
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Point;
+import android.os.Bundle;
 import android.support.v4.view.ViewPager.LayoutParams;
-
 import android.view.View;
 import android.widget.LinearLayout;
+
+import com.google.android.maps.GeoPoint;
+import com.google.android.maps.MapActivity;
+import com.google.android.maps.MapController;
+import com.google.android.maps.MapView;
+import com.google.android.maps.Overlay;
 
 public class Gmap extends MapActivity  {
 	GeoPoint p;
@@ -40,9 +36,9 @@ public class Gmap extends MapActivity  {
             Point screenPts = new Point();
             mapView.getProjection().toPixels(p, screenPts);
  
-            //---add the marker---
+              //---add the marker---
             Bitmap bmp = BitmapFactory.decodeResource(
-                getResources(), R.drawable.pushpin);            
+            getResources(), R.drawable.pushpin);            
             canvas.drawBitmap(bmp, screenPts.x, screenPts.y-20,null);   
          //   paintText = new Paint(); 
          //   paintText.setColor(Color.RED); 
@@ -95,6 +91,7 @@ public void onCreate(Bundle savedInstanceState) {
   mc.animateTo(p);
   mc.setZoom(17); 
   MapOverlay mapOverlay = new MapOverlay();
+
   List<Overlay> listOfOverlays = mapView.getOverlays();
   listOfOverlays.clear();
   listOfOverlays.add(mapOverlay);       

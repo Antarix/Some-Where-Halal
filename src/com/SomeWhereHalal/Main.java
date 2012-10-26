@@ -10,10 +10,11 @@ import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 
 public class Main extends Activity {
-	private Spinner spinnerRating;
+	
 	private Spinner spinnerCountry;
 	private Spinner spinnerState;
 	@Override
@@ -21,7 +22,7 @@ public class Main extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.main);
 		loadCountry();
-		loadRating();
+		
 	}
 	
 	@Override
@@ -30,13 +31,16 @@ public class Main extends Activity {
 		return true;
 	}
 
+	public void getNearby(View v)
+	  {
+		  Intent gPlaceIntent = new Intent(this,Gplaces.class);
+		  startActivity(gPlaceIntent);
+	  }
 	public void showSearchResults(View v) {
 		
 		
-		//String state = spinnerState.getSelectedItem().toString();
-		//String country = spinnerCountry.getSelectedItem().toString();
-		String[] query = {spinnerCountry.getSelectedItem().toString(),spinnerState.getSelectedItem().toString()};
-	//	Toast.makeText(getApplicationContext(), "State : " + state + " Country : " + country,Toast.LENGTH_LONG).show();
+		TextView txtZip = (TextView)findViewById(R.id.zip_code_text);
+		String[] query = {spinnerCountry.getSelectedItem().toString(),spinnerState.getSelectedItem().toString(),txtZip.getText().toString()};
 		Intent restaurantIntent = new Intent(this, RestaurantList.class);
 		restaurantIntent.putExtra("SearchQuery", query);
 		startActivity(restaurantIntent); 
@@ -93,13 +97,5 @@ public class Main extends Activity {
 		spinnerState.setAdapter(adapter);
 	}
 
-	public void loadRating() {
-		spinnerRating = (Spinner) findViewById(R.id.spinner_rating);
-		ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
-				this, R.array.rating_array,
-				android.R.layout.simple_spinner_item);
-		adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-		spinnerRating.setAdapter(adapter);
-	}
 	
 }

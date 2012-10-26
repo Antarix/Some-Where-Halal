@@ -69,7 +69,7 @@ public class Util {
 	
 	
 	//Get URL encoded string
-	public String getEncodedString(String str)
+	public static String getEncodedString(String str)
 	{
 		String query = "";
 		try {

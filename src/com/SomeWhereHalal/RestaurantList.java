@@ -17,38 +17,42 @@ import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 
-
 public class RestaurantList extends Activity {
 
-	private Util util;
 	private String[] SearchQuery;
+	private String Url;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.restaurant_list);
 		Intent RestaurantIntent = getIntent();
-		util = new Util();	
+
 		if (RestaurantIntent.hasExtra("SearchQuery")) {
 			SearchQuery = RestaurantIntent.getStringArrayExtra("SearchQuery");
-			
-			String Url = "http://somewherehalal.com/lib/search.php?country="
-					+ util.getEncodedString(SearchQuery[0]) + "&state=" + util.getEncodedString(SearchQuery[1]);
+
+			if (SearchQuery[2].length() > 0) {
+
+				Url = "http://192.168.0.100:81/somewherehalal.com/lib/search.php?zip="
+						+ Util.getEncodedString(SearchQuery[2]);
+			} else {
+
+				Url = "http://192.168.0.100:81/somewherehalal.com/lib/search.php?country="
+						+ Util.getEncodedString(SearchQuery[0])
+						+ "&state="
+						+ Util.getEncodedString(SearchQuery[1]);
+			}
 			loadRestaurantList(Url);
 
 		}
 	}
-	
-	
 
-	@SuppressWarnings("static-access")
 	public void loadRestaurantList(String Url) {
 
-		
 		ArrayList<HashMap<String, String>> mylist = new ArrayList<HashMap<String, String>>();
 
-	   	JSONObject json = util.getJSONfromURL(Url);
-	   
+		JSONObject json = Util.getJSONfromURL(Url);
+
 		try {
 			// Get the element that holds the earthquakes ( JSONArray )
 			JSONArray RestaurantList = json.getJSONArray("Restaurants");
@@ -58,26 +62,29 @@ public class RestaurantList extends Activity {
 				JSONObject Restaurant = RestaurantList.getJSONObject(i);
 				map.put("id", Restaurant.getString("id"));
 				map.put("name", Restaurant.getString("name"));
-				map.put("address", "Address: " + Restaurant.getString("address"));
-				map.put("country", "Country: " + Restaurant.getString("country"));
+				map.put("address",
+						"Address: " + Restaurant.getString("address"));
+				map.put("country",
+						"Country: " + Restaurant.getString("country"));
 				map.put("state", "State: " + Restaurant.getString("state"));
 				mylist.add(map);
-				
 
 			}
 		} catch (JSONException e) {
 			Log.e("log_tag", "Error parsing data " + e.toString());
 
 		}
-		
-		String[] from = new String[]{"name","address","country","state"};
-        int[] to = new int[]{R.id.txt_name,R.id.txt_address,R.id.txt_country,R.id.txt_state};
-        final ListView listview = (ListView)findViewById(R.id.listview_restaurant);
-		ListAdapter adapter = new SimpleAdapter(this, mylist, R.layout.restaurant_list_item,from,to);
-		
+
+		String[] from = new String[] { "name", "address", "country", "state" };
+		int[] to = new int[] { R.id.txt_name, R.id.txt_address,
+				R.id.txt_country, R.id.txt_state };
+		final ListView listview = (ListView) findViewById(R.id.listview_restaurant);
+		ListAdapter adapter = new SimpleAdapter(this, mylist,
+				R.layout.restaurant_list_item, from, to);
+
 		listview.setAdapter(adapter);
-		//setListAdapter(adapter);
-		
+		// setListAdapter(adapter);
+
 		listview.setTextFilterEnabled(true);
 		listview.setOnItemClickListener(new OnItemClickListener() {
 			public void onItemClick(AdapterView<?> parent, View view,
@@ -85,18 +92,18 @@ public class RestaurantList extends Activity {
 				@SuppressWarnings("unchecked")
 				HashMap<String, String> o = (HashMap<String, String>) listview
 						.getItemAtPosition(position);
-				
-				Intent detailIntent = new Intent(getApplicationContext(),RestaurantDetail.class);
-				
+
+				Intent detailIntent = new Intent(getApplicationContext(),
+						RestaurantDetail.class);
+
 				detailIntent.putExtra("Query", o.get("id").toString());
 				startActivity(detailIntent);
-				//Toast.makeText(getApplicationContext(),"ID '" + o.get("id") + "' was clicked.",Toast.LENGTH_SHORT).show();
+				// Toast.makeText(getApplicationContext(),"ID '" + o.get("id") +
+				// "' was clicked.",Toast.LENGTH_SHORT).show();
 
 			}
 		});
 
 	}
-
-
 
 }
